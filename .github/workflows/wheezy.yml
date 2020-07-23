@@ -1,0 +1,14 @@
+name: wheezy
+on: push
+
+jobs:
+  build-wheezy-slim:
+    name: wheezy-slim
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2.0.0
+      - name: build image
+        run: make build-wheezy-slim
+      - name: docker image ls
+        run: docker image ls
