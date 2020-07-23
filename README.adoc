@@ -1,1 +1,4 @@
 = Debian docker image
+
+image:https://github.com/sunakan/debian-docker/workflows/wheezy/badge.svg[link=https://github.com/sunakan/debian-docker/actions?query=workflow%3Awheezy]
+image:https://github.com/sunakan/debian-docker/workflows/jessie/badge.svg[link=https://github.com/sunakan/debian-docker/actions?query=workflow%3Ajessie]
