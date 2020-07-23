@@ -1,19 +1,19 @@
-name: wheezy
+name: jessie
 on: push
 
 jobs:
-  build-and-push-wheezy-slim:
-    name: wheezy-slim
+  build-and-push-jessie-slim:
+    name: jessie-slim
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2.0.0
-      - name: make build-wheezy-slim
-        run: make build-wheezy-slim
+      - name: make build-jessie-slim
+        run: make build-jessie-slim
       - name: make docker-login
         run: |
           make docker-login \
           DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }} \
           DOCKERHUB_PASSWORD=${{ secrets.DOCKERHUB_PASSWORD }}
-      - name: make push-wheezy-slim
-        run: make push-wheezy-slim
+      - name: make push-jessie-slim
+        run: make push-jessie-slim

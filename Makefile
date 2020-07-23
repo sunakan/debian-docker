@@ -24,3 +24,13 @@ build-wheezy-slim:
 .PHONY: push-wheezy-slim
 push-wheezy-slim:
 	@docker push $(DOCKER_REPOSITORY):wheezy-slim
+
+.PHONY: build-jessie-slim
+build-jessie-slim:
+	@docker build ./ \
+		--file 08-jessie-slim/Dockerfile \
+		--tag $(DOCKER_REPOSITORY):jessie-slim
+
+.PHONY: push-jessie-slim
+push-jessie-slim:
+	@docker push $(DOCKER_REPOSITORY):jessie-slim
