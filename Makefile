@@ -13,14 +13,14 @@ DOCKER_REPOSITORY  := sunakan/debian
 ################################################################################
 .PHONY: docker-login
 docker-login:
-	echo $(DOCKERHUB_PASSWORD) | docker login --username $(DOCKERHUB_USERNAME) --password-stdin
+	@echo $(DOCKERHUB_PASSWORD) | docker login --username $(DOCKERHUB_USERNAME) --password-stdin
 
 .PHONY: build-wheezy-slim
 build-wheezy-slim:
-	docker build ./ \
+	@docker build ./ \
 		--file 07-wheezy-slim/Dockerfile \
 		--tag $(DOCKER_REPOSITORY):wheezy-slim
 
 .PHONY: push-wheezy-slim
 push-wheezy-slim:
-	docker push $(DOCKER_REPOSITORY):wheezy-slim
+	@docker push $(DOCKER_REPOSITORY):wheezy-slim
