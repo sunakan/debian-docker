@@ -8,7 +8,12 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2.0.0
-      - name: build image
+      - name: make build-wheezy-slim
         run: make build-wheezy-slim
-      - name: docker image ls
-        run: docker image ls
+      - name: make docker-login
+        run: |
+          make docker-login \
+          DOCKERHUB_USERNAME=${{ secrets.DOCKERHUB_USERNAME }} \
+          DOCKERHUB_PASSWORD=${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: make push-wheezy-slim
+        run: make push-wheezy-slim
